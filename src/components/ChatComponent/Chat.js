@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { addMessage, fetchMessges } from "../../store/Actions/Actions"
 import { useEffect, useState } from "react"
 import { scrolHelper } from "../../helpers/scrollHelper"
+import { clearMessageInput } from "../../helpers/clearMessageInput"
 
 function Chat({ addMessage, username, messages, fetchMessges }) {
     const [message, setMessage] = useState("");
@@ -27,15 +28,17 @@ function Chat({ addMessage, username, messages, fetchMessges }) {
             date: new Date(),
             content: message
         })
-        scrolHelper()
+        scrolHelper();
+        clearMessageInput();
     }
     useEffect(() => {
         fetchMessges();
         scrolHelper();
+        clearMessageInput()
     }, []);
     window.addEventListener("storage", () => {
         fetchMessges();
-        scrolHelper()
+        scrolHelper();
     });
 
     return (

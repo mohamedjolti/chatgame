@@ -10,6 +10,7 @@ export function messagesReducer(state = inistState, action) {
     switch (action.type) {
         case ADD_MESSAGE:
             state.messages = [...state.messages, payload]
+            
             return { ...state, item: payload }
         case FETCH_MESSAGES:
             state.messages = [...payload]

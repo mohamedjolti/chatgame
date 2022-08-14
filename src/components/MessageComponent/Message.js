@@ -1,5 +1,7 @@
+import { report } from "../../helpers/report"
+
 export function Message({ message }) {
-    console.log(message)
+    report(message)
     if (message.isReceived) {
         return (<div className="row msg_container base_receive">
             <div className="col-md-2 col-xs-2 avatar">

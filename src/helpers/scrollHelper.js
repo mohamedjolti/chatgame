@@ -1,5 +1,8 @@
+import { MESSAGES_WRAPPER_ID, SMALL_DELAY } from "../store/constants";
+
 export function scrolHelper(){
     setTimeout(()=>{
-        document.getElementsByClassName("msg_container_base")[0].scrollTop = document.getElementsByClassName("msg_container_base")[0].scrollHeight;
-    },500)
+        document.getElementsByClassName(MESSAGES_WRAPPER_ID)[0].scrollTop =
+           document.getElementsByClassName(MESSAGES_WRAPPER_ID)[0].scrollHeight;
+    },SMALL_DELAY)
 }
